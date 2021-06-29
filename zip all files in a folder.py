@@ -1,0 +1,21 @@
+import zipfile
+import os
+
+
+print("Copy and paste source folder path:")
+src_dir = input()
+
+print("Copy and paste distention folder path:")
+# dest_dir = "C:\\Users\\ahmed.elzaher\\Desktop"
+dest_dir = input()
+
+files = os.listdir(src_dir)
+for file in files:
+    zip_file = zipfile.ZipFile(dest_dir + "\\" + file + ".zip", 'w')
+    zip_file.write(file, compress_type=zipfile.ZIP_DEFLATED)
+    zip_file.close()
+print("done")
+
+
+
+
